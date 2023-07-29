@@ -12,8 +12,7 @@ window.onload = function (event) {
 window.addEventListener('copy', () => {
     navigator.clipboard.readText()
         .then(text => {
-            console.log(text)
-            heading.textContent =+ text
+            heading.textContent += text
         })
     })
 //click event
@@ -21,5 +20,9 @@ document.body.addEventListener('click', event => {
     event.target.classList.toggle('mirror')
 })
 
+//dblclick
+document.body.addEventListener('dblclick', event => {
+    event.target.outerHTML = ''
+})
 
 }
